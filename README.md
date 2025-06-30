@@ -1,6 +1,11 @@
-# 🛒 Atualização de Estoque e Preços - Shopify via Python
+# 🛒 S.H.O.P. - Shopify Handling & Operations Processor
 
 Scripts para automação da atualização de **estoques** e **preços** de produtos na plataforma Shopify, com base em planilhas locais contendo `SKU`.
+
+Este projeto é composto por dois módulos principais:
+
+- `atualiza_estoque.py`: Atualiza os níveis de estoque por SKU
+- `atualiza_precos.py`: Atualiza os preços por SKU
 
 ---
 
@@ -24,18 +29,32 @@ Scripts para automação da atualização de **estoques** e **preços** de produ
 ## ✅ Requisitos
 
 - Python 3.8+
-- Biblioteca `pandas`, `requests`, `openpyxl`  
-  Instalar com:
+- Bibliotecas Python necessárias:
 
 ```bash
 pip install pandas requests openpyxl
 ```
 
-- Token de acesso privado da Shopify com permissões de:
-  - `read_products`
-  - `write_products`
-  - `read_inventory`
-  - `write_inventory`
+---
+
+## 🔐 Sobre o Token da Shopify
+
+Para que os scripts funcionem corretamente, é necessário gerar um **Access Token privado da Shopify**, associado a um **app personalizado** com permissões específicas.
+
+### Como gerar:
+
+1. Acesse o admin da Shopify: `https://sualoja.myshopify.com/admin`
+2. Vá em **Apps > Desenvolver apps para sua loja**
+3. Clique em **Criar um app** ou edite um já existente
+4. Adicione as permissões mínimas necessárias:
+   - `read_products`
+   - `write_products`
+   - `read_inventory`
+   - `write_inventory`
+5. Gere o **Access Token** e copie
+
+> ⚠️ **Importante**: mantenha o token em segurança e não compartilhe publicamente.  
+> Inclua-o diretamente nos scripts em tempo de desenvolvimento ou idealmente em um `.env` no futuro.
 
 ---
 
@@ -105,5 +124,21 @@ Esses arquivos mostram o status de cada SKU processado (atualizado, erro ou SKU 
 ## ⚠️ Observações
 
 - Os SKUs são normalizados com `zfill(7)` para garantir que todos tenham 7 dígitos (ex: `0012345`);
-- As requisições respeitam os limites da API (máx. 2 chamadas por segundo);
-- Apenas variantes com SKUs exatos são atualizadas.
+- As requisições respeitam os limites da API da Shopify (máx. 2 chamadas por segundo);
+- Apenas variantes com SKUs exatos são atualizadas;
+- Os preços são tratados como `float` com ponto decimal (ex: `49.90`).
+
+---
+
+## 📛 Nome do Projeto: S.H.O.P.
+
+**S.H.O.P.** significa: **Shopify Handling & Operations Processor**
+
+### Acróstico:
+
+- **S** – Sync de dados entre planilhas e Shopify  
+- **H** – Handling seguro de estoque e preços  
+- **O** – Operações automáticas via scripts Python  
+- **P** – Precisão nos SKUs, logs e integração
+
+---
