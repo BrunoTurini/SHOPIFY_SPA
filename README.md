@@ -1,4 +1,4 @@
-# 🛒 S.H.O.P. - Shopify Handling & Operations Processor
+# 🛒 S.P.A. - Shopify Price & Availability
 
 Scripts para automação da atualização de **estoques** e **preços** de produtos na plataforma Shopify, com base em planilhas locais contendo `SKU`.
 
@@ -130,15 +130,14 @@ Esses arquivos mostram o status de cada SKU processado (atualizado, erro ou SKU 
 
 ---
 
-## 📛 Nome do Projeto: S.H.O.P.
+## 📛 Nome do Projeto: S.P.A.
 
-**S.H.O.P.** significa: **Shopify Handling & Operations Processor**
+**S.P.A.** significa: **Shopify Price & Availability**
 
 ### Acróstico:
 
-- **S** – Sync de dados entre planilhas e Shopify  
-- **H** – Handling seguro de estoque e preços  
-- **O** – Operações automáticas via scripts Python  
-- **P** – Precisão nos SKUs, logs e integração
+- **S** – Shopify  
+- **P** – Preço  
+- **A** – Atualização de estoque
 
 ---
